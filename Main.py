@@ -42,7 +42,7 @@ def preorder(root) -> None:
         res.append(root.data)
         res = res + preorder(root.left_child)
         res = res + preorder(root.right_child)
-    return res
+    print(res)
 
 
 def postorder(root) -> None:
@@ -52,7 +52,7 @@ def postorder(root) -> None:
         res = postorder(root.left_child)
         res = res + postorder(root.right_child)
         res.append(root.data)
-    return res
+    print(res)
 
 
 # Do not change the following code
