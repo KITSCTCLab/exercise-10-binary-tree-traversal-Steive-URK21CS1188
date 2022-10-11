@@ -5,34 +5,34 @@ class BinaryTreeNode:
         self.right_child = None
    
     
-def insert(root, data) -> BinaryTreeNode:
+def insert(root, new_value) -> BinaryTreeNode:
     """If binary search tree is empty, make a new node, declare it as root and return the root.
         If tree is not empty and if new_value is less than value of data in root, add it to left subtree and proceed recursively.
         If tree is not empty and if new_value is >= value of data in root, add it to right subtree and proceed recursively.
         Finally, return the root.
         """
     # Write your code here
-    if root.data:
-        if data < root.data:
-            if root.data is None:
-                root.left_child = BinaryTreeNode(data)
+    if self.data:
+        if data < self.data:
+            if self.data is None:
+                self.left_child = BinaryTreeNode(data)
             else:
-                root.left_child.insert(root, data)
-        elif data > root.data:
-            if root.data is None:
-                root.right_child = BinaryTreeNode(data)
+                self.left_child.insert(root, data)
+        elif data > self.data:
+            if self.data is None:
+                self.right_child = BinaryTreeNode(data)
             else:
-                root.right_child.insert(root, data)
+                self.right_child.insert(root, data)
     else:
-        root.data=data
+        self.data=data
           
 def inorder(root) -> None:
     # Write your code here
     res = []
     if root is not None:
-        res = root.inorder(root.left_child)
+        res = self.inorder(root.left_child)
         res.append(root.data)
-        res = res + root.inorder(root.right_child)
+        res = res + self.inorder(root.right_child)
     return res
 
 def preorder(root) -> None:
@@ -40,8 +40,8 @@ def preorder(root) -> None:
     res = []
     if root is not None:
         res.append(root.data)
-        res = res + root.preorder(root.left_child)
-        res = res + root.preorder(root.right_child)
+        res = res + self.preorder(root.left_child)
+        res = res + self.preorder(root.right_child)
     return res
 
 
@@ -49,8 +49,8 @@ def postorder(root) -> None:
     # Write your code here
     res = []
     if root is not None:
-        res = root.postorder(root.left_child)
-        res = res + root.postorder(root.right_child)
+        res = self.postorder(root.left_child)
+        res = res + self.postorder(root.right_child)
         res.append(root.data)
     return res
 
