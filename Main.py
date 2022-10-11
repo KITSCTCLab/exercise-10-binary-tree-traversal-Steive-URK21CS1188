@@ -30,9 +30,9 @@ def inorder(root) -> None:
     # Write your code here
     res = []
     if root is not None:
-        res = self.inorder(root.left_child)
+        res = inorder(root.left_child)
         res.append(root.data)
-        res = res + self.inorder(root.right_child)
+        res = res + inorder(root.right_child)
     return res
 
 def preorder(root) -> None:
@@ -40,8 +40,8 @@ def preorder(root) -> None:
     res = []
     if root is not None:
         res.append(root.data)
-        res = res + self.preorder(root.left_child)
-        res = res + self.preorder(root.right_child)
+        res = res + preorder(root.left_child)
+        res = res + preorder(root.right_child)
     return res
 
 
@@ -49,8 +49,8 @@ def postorder(root) -> None:
     # Write your code here
     res = []
     if root is not None:
-        res = self.postorder(root.left_child)
-        res = res + self.postorder(root.right_child)
+        res = postorder(root.left_child)
+        res = res + postorder(root.right_child)
         res.append(root.data)
     return res
 
