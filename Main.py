@@ -33,7 +33,7 @@ def inorder(root) -> None:
         res = inorder(root.left_child)
         res.append(root.data)
         res = res + inorder(root.right_child)
-    return res
+    print(res)
 
 def preorder(root) -> None:
     # Write your code here
