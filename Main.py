@@ -27,14 +27,31 @@ def insert(root, new_value) -> BinaryTreeNode:
         self.data=data
 def inorder(root) -> None:
     # Write your code here
-
+    res = []
+    if root:
+        res = self.inorderTraversal(root.left)
+        res.append(root.data)
+        res = res + self.inorderTraversal(root.right)
+    return res
 
 def preorder(root) -> None:
     # Write your code here
+    res = []
+    if root:
+        res.append(root.data)
+        res = res + self.PreorderTraversal(root.left)
+        res = res + self.PreorderTraversal(root.right)
+    return res
 
 
 def postorder(root) -> None:
     # Write your code here
+    res = []
+    if root:
+        res = self.PostorderTraversal(root.left)
+        res = res + self.PostorderTraversal(root.right)
+        res.append(root.data)
+    return res
 
 
 # Do not change the following code
