@@ -24,7 +24,7 @@ def insert(root, new_value) -> BinaryTreeNode:
             else:
                 root.right_child.insert(root, new_value)
     else:
-        root.new_value=new_value
+        root = BinaryTreeNode(new_value)
           
 def inorder(root) -> None:
     # Write your code here
