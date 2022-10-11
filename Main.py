@@ -12,27 +12,27 @@ def insert(root, data) -> BinaryTreeNode:
         Finally, return the root.
         """
     # Write your code here
-    if self.data:
-        if data < self.data:
-            if self.data is None:
-                self.left_child = BinaryTreeNode(data)
+    if root.data:
+        if data < root.data:
+            if root.data is None:
+                root.left_child = BinaryTreeNode(data)
             else:
-                self.left_child.insert(root, data)
-        elif data > self.data:
-            if self.data is None:
-                self.right_child = BinaryTreeNode(data)
+                root.left_child.insert(root, data)
+        elif data > root.data:
+            if root.data is None:
+                root.right_child = BinaryTreeNode(data)
             else:
-                self.right_child.insert(root, data)
+                root.right_child.insert(root, data)
     else:
-        self.data=data
+        root.data=data
           
 def inorder(root) -> None:
     # Write your code here
     res = []
     if root is not None:
-        res = self.inorder(root.left_child)
+        res = root.inorder(root.left_child)
         res.append(root.data)
-        res = res + self.inorder(root.right_child)
+        res = res + root.inorder(root.right_child)
     return res
 
 def preorder(root) -> None:
@@ -40,8 +40,8 @@ def preorder(root) -> None:
     res = []
     if root is not None:
         res.append(root.data)
-        res = res + self.preorder(root.left_child)
-        res = res + self.preorder(root.right_child)
+        res = res + root.preorder(root.left_child)
+        res = res + root.preorder(root.right_child)
     return res
 
 
@@ -49,8 +49,8 @@ def postorder(root) -> None:
     # Write your code here
     res = []
     if root is not None:
-        res = self.postorder(root.left_child)
-        res = res + self.postorder(root.right_child)
+        res = root.postorder(root.left_child)
+        res = res + root.postorder(root.right_child)
         res.append(root.data)
     return res
 
