@@ -29,9 +29,9 @@ def inorder(root) -> None:
     # Write your code here
     res = []
     if root:
-        res = self.inorderTraversal(root.left)
+        res = self.inorder(root.left_child)
         res.append(root.data)
-        res = res + self.inorderTraversal(root.right)
+        res = res + self.inorder(root.right_child)
     return res
 
 def preorder(root) -> None:
@@ -39,8 +39,8 @@ def preorder(root) -> None:
     res = []
     if root:
         res.append(root.data)
-        res = res + self.PreorderTraversal(root.left)
-        res = res + self.PreorderTraversal(root.right)
+        res = res + self.preorder(root.left_child)
+        res = res + self.preorder(root.right_child)
     return res
 
 
@@ -48,8 +48,8 @@ def postorder(root) -> None:
     # Write your code here
     res = []
     if root:
-        res = self.PostorderTraversal(root.left)
-        res = res + self.PostorderTraversal(root.right)
+        res = self.postorder(root.left_child)
+        res = res + self.postorder(root.right_child)
         res.append(root.data)
     return res
 
