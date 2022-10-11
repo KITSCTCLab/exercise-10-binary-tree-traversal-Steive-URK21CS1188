@@ -13,12 +13,18 @@ def insert(root, new_value) -> BinaryTreeNode:
         """
     # Write your code here
     if self.data:
-        if data<self.data:
-            if self.datais null:
-                self.left =node
+        if data < self.data:
+            if self.data is None:
+                self.left_child = BinaryTreeNode(data)
             else:
-                self.left.insert(root, data)
-
+                self.left_child.insert(root, data)
+        elif data > self.data:
+            if self.data is None:
+                self.right_child = BinaryTreeNode(data)
+            else:
+                self.right_child.insert(root, data)
+    else:
+        self.data=data
 def inorder(root) -> None:
     # Write your code here
 
