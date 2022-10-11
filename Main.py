@@ -12,7 +12,7 @@ def insert(root, new_value) -> BinaryTreeNode:
         Finally, return the root.
         """
     # Write your code here
-    if self.data:
+    if self.data is not None:
         if data < self.data:
             if self.data is None:
                 self.left_child = BinaryTreeNode(data)
