@@ -12,48 +12,55 @@ def insert(root, new_value) -> BinaryTreeNode:
         Finally, return the root.
         """
     # Write your code here
-    if root is not None:
-        if new_value < root.new_value:
-            if root.new_value is None:
-                root.left_child = BinaryTreeNode(new_value)
-            else:
-                root.left_child.insert(root, new_value)
-        elif new_value > root.datanew_value:
-            if root.new_value is None:
-                root.right_child = BinaryTreeNode(new_value)
-            else:
-                root.right_child.insert(root, new_value)
-    else:
+    if (root == None):
         root = BinaryTreeNode(new_value)
-          
+        return root
+    else:
+        if root.data > new_value:
+            if root.left_child is None:
+                new_node = BinaryTreeNode(new_value)
+                root.left_child = new_node
+            else:
+                insert(root.left_child,new_value)
+                
+        else:
+            if root.right_child is None:
+                new_node = BinaryTreeNode(new_value)
+                root.right_child = new_node
+            else:
+                insert(root.right_child,new_value)
+
 def inorder(root) -> None:
-    # Write your code here
-    res = []
-    if root is not None:
-        res = inorder(root.left_child)
-        res.append(root.data)
-        res = res + inorder(root.right_child)
-    print(res)
+    """
+    to print in the order
+    left mid right
+    """
+    if root:
+        inorder(root.left_child)
+        print(root.data, end = " ")
+        inorder(root.right_child)
+
 
 def preorder(root) -> None:
-    # Write your code here
-    res = []
-    if root is not None:
-        res.append(root.data)
-        res = res + preorder(root.left_child)
-        res = res + preorder(root.right_child)
-    print(res)
+    """
+    to print in the order
+    mid left right
+    """
+    if root:
+        print(root.data, end = " ")
+        preorder(root.left_child)
+        preorder(root.right_child)
 
 
 def postorder(root) -> None:
-    # Write your code here
-    res = []
-    if root is not None:
-        res = postorder(root.left_child)
-        res = res + postorder(root.right_child)
-        res.append(root.data)
-    print(res)
-
+    """
+    to print in the order
+    left right left
+    """
+    if root:
+        postorder(root.left_child)
+        postorder(root.right_child)
+        print(root.data, end = " ")
 
 # Do not change the following code
 input_data = input()
